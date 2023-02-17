@@ -1,5 +1,5 @@
-import { css } from '@emotion/react';
-import { ComponentPropsWithRef } from 'react';
+import { css } from "@emotion/react";
+import { ComponentPropsWithRef } from "react";
 
 interface CreateButtonProps extends ComponentPropsWithRef<"button"> {
   createHandler: () => void;
@@ -25,9 +25,12 @@ const button = css`
   }
 `;
 
-const CreateButton = ({createHandler}: CreateButtonProps) => {
+const CreateButton = ({ createHandler }: CreateButtonProps) => {
+  return (
+    <button css={button} onClick={createHandler}>
+      +
+    </button>
+  );
+};
 
-  return <button css={button} onClick={createHandler}>+</button>
-}
-
-export default CreateButton
+export default CreateButton;
